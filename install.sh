@@ -32,9 +32,9 @@ get_tags() {
 		-show_entries format_tags=title,artist,album \
 		-of default=noprint_wrappers=1:nokey=1 "$1")
 
-	title="${tags[0]:-Unknown Title}"
-	artist="${tags[1]:-Unknown Artist}"
-	album="${tags[2]:-Unknown Album}"
+	title="${tags[1]:-Unknown Title}"
+	artist="${tags[2]:-Unknown Artist}"
+	album="${tags[0]:-Unknown Album}"
 }
 
 while [[ $# -gt 0 ]]; do
@@ -47,7 +47,7 @@ while [[ $# -gt 0 ]]; do
 		echo "============================="
 		for i in *.mp3; do
 			get_tags "$i"
-			echo "$title by $artist from $album"
+			echo "${i%.mp3} by $artist from $album"
 			echo "============"
 			echo "Title: $title"
 			echo "Album: $album"
@@ -66,7 +66,6 @@ while [[ $# -gt 0 ]]; do
 		;;
 	-h)
 		echo "Go read the manual from github :/"
-    echo "https://github.com/psdkjoon/mdit"
 		exit 0
 		;;
 	-*)
@@ -85,7 +84,7 @@ clear
 if [[ $all == "false" ]]; then
 	for i in *.mp3; do
 		get_tags "$i"
-		echo "$title by $artist from $album"
+		echo "${i%.mp3} by $artist from $album"
 		read -p "change? [Y/n/f] " -r -n 1 ans
 		read -t 0.1 -s
 		if [[ "$ans" == "y" || "$ans" == "Y" ]]; then
@@ -124,7 +123,7 @@ mkdir mdit_output
 if [[ "$each" == "true" ]]; then
 	for i in "${change[@]}"; do
 		get_tags "$i"
-		echo "$title by $artist from $album"
+		echo "${i%.mp3} by $artist from $album"
 		echo "t for Titles"
 		echo "a for Albums"
 		echo "r for artists"
