@@ -26,6 +26,7 @@ mdit [options]
  | ----- | ----- | ----- | 
 | **(No Option)** | Interactive Mode | The default. Interactively asks you to select which MP3s to modify. | 
 | `-s` | Show | Lists the Title, Artist, and Album for all `.mp3` files and exits. No changes are made. | 
+| `-ss` | ShowSmall | Lists the Title, Artist, and Album in a *Small* format for all `.mp3` files and exits. No changes are made. | 
 | `-a` | All | Automatically selects all `.mp3` files in the directory for modification, skipping the interactive selection. | 
 | `-e` | Each | After selecting files, this prompts you for *each file* individually, asking what tag to change and what to change it to. | 
 | `-i` | In-place | **DANGER:** Replaces your original files with the modified ones. By default, the script saves new files in a new `mdit_output` folder and leaves your originals untouched. | 
@@ -150,3 +151,19 @@ This is a read-only operation.
    Artist: Cool Artist
    =============================
    ```
+#### OR 
+1. Run the script with the `-s` flag:
+   ```
+   mdit -ss
+   
+   ```
+
+2. The script will print a *Small* formatted list of all MP3s and their tags, then exit.
+   ```
+   =============================
+   Track 1 by Cool Artist from Best Album
+   =============================
+   Track 2 by Cool Artist from Best Album
+   =============================
+   ```
+

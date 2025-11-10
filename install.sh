@@ -56,6 +56,15 @@ while [[ $# -gt 0 ]]; do
 		done
 		exit 0
 		;;
+  -ss)
+		echo "============================="
+		for i in *.mp3; do
+			get_tags "$i"
+			echo "${i%.mp3} by $artist from $album"
+			echo "============================="
+		done
+		exit 0
+		;;
 	-e)
 		each=true
 		shift
