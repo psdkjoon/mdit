@@ -29,7 +29,7 @@ mdit [options]
 | `-a` | All | Automatically selects all `.mp3` files in the directory for modification, skipping the interactive selection. | 
 | `-e` | Each | After selecting files, this prompts you for *each file* individually, asking what tag to change and what to change it to. | 
 | `-i` | In-place | **DANGER:** Replaces your original files with the modified ones. By default, the script saves new files in a new `mdit_output` folder and leaves your originals untouched. | 
-| `-h` | Help | <comment-tag id="4">Displays a help message and exits.</comment-tag id="4"> | 
+| `-h` | Help | Displays a help message and exits.| 
 
 ---
 
@@ -111,7 +111,7 @@ Use this if you need to make unique changes to each file.
 
 ### Workflow 3: DANGER - In-Place Editing
 
-<comment-tag id="6">Use the -i flag **with caution**. This flag modifies your original files. **It is highly recommended to back up your music first.**</comment-tag id="6">
+Use the -i flag **with caution**. This flag modifies your original files. **It is highly recommended to back up your music first.**
 
 The `-i` flag can be combined with other flags.
 * `mdit -i`: Interactive selection, changes replace original files.
